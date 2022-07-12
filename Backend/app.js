@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const SignUpUsers = [{email: 'aman82591@gmail.com', Password: 'dd', name: 'Aman'}];
+const SignUpUsers = [];
 
 app.get('/', (req, res) => {
     res.redirect('/login');
