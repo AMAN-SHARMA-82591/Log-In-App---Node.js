@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <h1>Sign In</h1>
+    <form class="formSection" action="/login" method="POST">
+      <div>
+        <div>
+          <label for="">Email</label>
+          <input type="text" name="email" required />
+        </div>
+        <div>
+          <label for="">Password</label>
+          <input type="password" name="Password" required />
+        </div>
+        <div>
+          <p
+            style="padding: 0px; margin: 0px; color: red"
+            id="errorHandling"
+          ></p>
+        </div>
+        <button type="submit">Log In</button>
+      </div>
+    </form>
+    <a href="/register">Register</a>
+    <script>
+      const errorHandling = document.getElementById("errorHandling");
+      errorHandling.innerText = "Email/Password is Incorrect";
+      errorHandling.style.display = "none";
+      fetch("/login")
+        .then((response) => response.json())
+        .then((data) => console.log("BoughtData", data));
+    </script>
+  </body>
+</html>
